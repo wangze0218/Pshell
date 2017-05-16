@@ -10,17 +10,20 @@ require_once "vendor/autoload.php";
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
-//加载ORM
-$paths = array("/path/to/entity-files");
-$isDevMode = false;
+// Create a simple "default" Doctrine ORM configuration for XML Mapping
+$isDevMode = true;
+$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src"), $isDevMode);
+// or if you prefer yaml or annotations
+//$config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
+//$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 
-// the connection configuration
-$dbParams = array(
+// database configuration parameters
+$conn = array(
     'driver'   => 'pdo_mysql',
     'user'     => 'root',
     'password' => 'root',
     'dbname'   => ' weiyuyan',
 );
 
-$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
-$entityManager = EntityManager::create($dbParams, $config);
+// obtaining the entity manager
+$entityManager = EntityManager::create($conn, $config);
