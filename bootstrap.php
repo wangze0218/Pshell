@@ -19,11 +19,11 @@ $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src"), $i
 
 // database configuration parameters
 $conn = array(
-    'driver'   => 'pdo_mysql',
-    'user'     => 'root',
+    'dbname' => 'weiyuyan',
+    'user' => 'root',
     'password' => 'root',
     'host' => '127.0.0.1',
-    'dbname'   => ' weiyuyan',
+    'driver' => 'pdo_mysql',
 );
 
 // obtaining the entity manager
