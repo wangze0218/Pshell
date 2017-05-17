@@ -1,20 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: wangze
- * Date: 2017/5/16
- * Time: 13:57
+ * @Entity @Table(name="products")
  */
-// src/Product.php
 class Product
 {
-    /**
-     * @var int
-     */
+    /** @Id @Column(type="integer") @GeneratedValue */
     protected $id;
-    /**
-     * @var string
-     */
+    /** @Column(type="string") */
     protected $name;
 
     public function getId()

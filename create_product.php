@@ -7,9 +7,8 @@
  */
 // create_product.php
 require_once "bootstrap.php";
-require_once "src/Product.php";
 
-$newProductName = 'wangze';
+$newProductName = $argv[1];
 
 $product = new Product();
 $product->setName($newProductName);
